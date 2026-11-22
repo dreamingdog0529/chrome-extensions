@@ -6,6 +6,7 @@
 
 | フォルダ | 内容 |
 |---|---|
+| `github-date-format/` | GitHub の日時表示を `yyyy/MM/dd HH:mm` 形式に書き換える拡張機能 |
 | `x-quick-block/` | X（Twitter）の各投稿に 🚫 ボタンを追加し、ワンクリックで投稿者をブロックする拡張機能 |
 
 ## 使い方
