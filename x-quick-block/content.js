@@ -119,7 +119,8 @@ function showUndoToast(screenName, hiddenArticles) {
     }
   }
 
-  undoBtn.addEventListener("click", async () => {
+  undoBtn.addEventListener("click", async (ev) => {
+    if (!ev.isTrusted) return; // ignore synthetic clicks from page scripts
     if (done) return;
     undoBtn.disabled = true;
     undoBtn.textContent = "戻しています…";
@@ -199,6 +200,7 @@ function injectButton(article) {
   btn.innerHTML =
     '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
   btn.addEventListener("click", (ev) => {
+    if (!ev.isTrusted) return; // ignore synthetic clicks from page scripts
     ev.preventDefault();
     ev.stopPropagation();
     onQuickBlockClick(btn, article);
